@@ -1,7 +1,18 @@
-import "./App.css";
+import { Component } from 'react';
+import './App.css';
+import ImageGallery from './components/ImageGallery/ImageGallery';
+import Searchbar from './components/Searchbar/Searchbar';
 
-function App() {
-  return <div className="App"></div>;
+export default class App extends Component {
+    handleSubmit = () => {
+        console.log('hsbhbdsjf');
+    };
+    render() {
+        return (
+            <div className="App">
+                <Searchbar onSubmit={this.handleSubmit} />
+                <ImageGallery />
+            </div>
+        );
+    }
 }
-
-export default App;

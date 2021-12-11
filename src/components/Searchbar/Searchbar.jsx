@@ -1,16 +1,24 @@
 import PropTypes from 'prop-types';
-function Searchbar(props) {
-    return null;
+
+import styles from './Searchbar.module.scss'
+function Searchbar({onSubmit}) {
+    return <header className={styles.Searchbar}>
+  <form className={styles.SearchForm}>
+    <button type="submit" className={styles['SearchForm-button']}>
+                <span className={styles['SearchForm-button-label']}>Search</span>
+    </button>
+
+    <input
+                className={styles['SearchForm-input']}
+      type="text"
+      autoComplete="off"
+      autoFocus
+      placeholder="Search images and photos"
+    />
+  </form>
+</header>
 }
-// Profile.propTypes = {
-//     username: PropTypes.string.isRequired,
-//     tag: PropTypes.string.isRequired,
-//     location: PropTypes.string.isRequired,
-//     avatar: PropTypes.string.isRequired,
-//     stats: PropTypes.shape({
-//         followers: PropTypes.number.isRequired,
-//         views: PropTypes.number.isRequired,
-//         likes: PropTypes.number.isRequired,
-//     }).isRequired,
-// };
+Searchbar.propTypes = {
+    onSubmit: PropTypes.func.isRequired
+};
 export default Searchbar;
