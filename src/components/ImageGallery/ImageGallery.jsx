@@ -36,6 +36,7 @@ export default class ImageGallery extends Component {
 
         if (nextPage !== curPage && curFilter === nextFilter) {
             this.setState({ status: STATUS.pending });
+            this.smoothScroll();
             const newPhotos = await apiService.searchPhoto();
             if (newPhotos.total === 0) {
                 this.setState({ status: STATUS.idle });
@@ -51,6 +52,15 @@ export default class ImageGallery extends Component {
     onClick = () => {
         apiService.incrementPage();
         this.setState({ page: apiService.page });
+    };
+
+    smoothScroll = () => {
+        setTimeout(() => {
+            window.scrollBy({
+                top: document.documentElement.clientHeight,
+                behavior: 'smooth',
+            });
+        }, 1000);
     };
 
     render() {
