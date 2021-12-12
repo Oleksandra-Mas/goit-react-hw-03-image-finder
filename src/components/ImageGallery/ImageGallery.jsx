@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { toast } from 'react-toastify';
 
@@ -93,6 +93,7 @@ export default class ImageGallery extends Component {
         }
     }
 }
-// ImageGallery.propTypes = {
-//     onSubmit: PropTypes.func.isRequired
-// };
+ImageGallery.propTypes = {
+    toggleModal: PropTypes.func.isRequired,
+    filter: PropTypes.string.isRequired,
+};

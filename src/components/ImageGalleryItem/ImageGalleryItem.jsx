@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import styles from './ImageGalleryItem.module.scss';
 export default class ImageGalleryItem extends Component {
@@ -27,6 +27,9 @@ export default class ImageGalleryItem extends Component {
         );
     }
 }
-// ImageGallery.propTypes = {
-//     onSubmit: PropTypes.func.isRequired
-// };
+ImageGalleryItem.propTypes = {
+    toggleModal: PropTypes.func.isRequired,
+    webImage: PropTypes.string.isRequired,
+    largeImage: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
+};

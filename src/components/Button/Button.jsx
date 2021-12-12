@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
 function Button({ onClick }) {
@@ -8,7 +8,7 @@ function Button({ onClick }) {
         </button>
     );
 }
-// ImageGallery.propTypes = {
-//     onSubmit: PropTypes.func.isRequired
-// };
+Button.propTypes = {
+    onClick: PropTypes.func.isRequired,
+};
 export default Button;

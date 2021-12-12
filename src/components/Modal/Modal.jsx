@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './Modal.module.scss';
@@ -36,6 +36,10 @@ export default class Modal extends Component {
         );
     }
 }
-// Modal.propTypes = {
-//     onSubmit: PropTypes.func.isRequired
-// };
+Modal.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    searchImage: PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        alt: PropTypes.string.isRequired,
+    }).isRequired,
+};
