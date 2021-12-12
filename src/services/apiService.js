@@ -16,10 +16,6 @@ export default class ApiService {
         this.page += 1;
     }
 
-    decrementPage() {
-        this.page -= 1;
-    }
-
     resetPage() {
         this.page = 1;
     }
