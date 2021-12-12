@@ -5,7 +5,8 @@ import styles from './Searchbar.module.scss';
 export default class Searchbar extends Component {
     state = { filter: '' };
     handleInputChange = event => {
-        this.setState({ filter: event.target.value.toLowerCase() });
+        const filter = event.target.value.toLowerCase();
+        this.setState({ filter });
     };
     handleSubmit = event => {
         event.preventDefault();

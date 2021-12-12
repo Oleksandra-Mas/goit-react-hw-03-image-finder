@@ -30,8 +30,10 @@ export default class ImageGallery extends Component {
             this.setState({ photos, status: STATUS.resolved });
         }
     }
+
     render() {
         const { photos, status } = this.state;
+        const { toggleModal } = this.props;
         if (status === STATUS.idle) {
             return null;
         }
@@ -48,6 +50,7 @@ export default class ImageGallery extends Component {
                                 webImage={webformatURL}
                                 largeImage={largeImageURL}
                                 tags={tags}
+                                toggleModal={toggleModal}
                             />
                         ),
                     )}
